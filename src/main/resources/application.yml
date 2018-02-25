@@ -1,0 +1,12 @@
+# web
+server:
+  port: 8081
+
+config:
+  user:
+    name: Mr.Li
+    age: 27
+    sex: 男
+    key: @config.key@
+    value: @config.value@
+  application: 單車
