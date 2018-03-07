@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pro.yuchen.demo.spring_demo.entity.ConfigBean;
+import pro.yuchen.demo.spring_demo.pojo.ConfigBean;
 
 @RestController
 public class HelloController {

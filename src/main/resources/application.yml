@@ -10,3 +10,22 @@ config:
     key: @config.key@
     value: @config.value@
   application: 單車
+
+
+
+spring:
+  # 模板配置
+  thymeleaf:
+    # 这个开发配置为false，避免改了模板还要重启服务器
+    cache: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    encoding: utf-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+    excluded-view-names:
+    template-resolver-order:
+
+
