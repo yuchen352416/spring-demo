@@ -17,6 +17,8 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -32,7 +34,7 @@ public class RSAEncrypt {
 	/**
 	 * 随机生成密钥对
 	 */
-	public static void genKeyPair(String filePath) {
+	public static Map<String, String> genKeyPair(String filePath) {
 		// KeyPairGenerator类用于生成公钥和私钥对，基于RSA算法生成对象
 		KeyPairGenerator keyPairGen = null;
 		try {
@@ -53,21 +55,14 @@ public class RSAEncrypt {
 			String publicKeyString = Base64.encode(publicKey.getEncoded());
 			// 得到私钥字符串
 			String privateKeyString = Base64.encode(privateKey.getEncoded());
-			// 将密钥对写入到文件
-			FileWriter pubfw = new FileWriter(filePath + "/publicKey.keystore");
-			FileWriter prifw = new FileWriter(filePath + "/privateKey.keystore");
-			BufferedWriter pubbw = new BufferedWriter(pubfw);
-			BufferedWriter pribw = new BufferedWriter(prifw);
-			pubbw.write(publicKeyString);
-			pribw.write(privateKeyString);
-			pubbw.flush();
-			pubbw.close();
-			pubfw.close();
-			pribw.flush();
-			pribw.close();
-			prifw.close();
+			// 返回Map<String, String>
+			Map<String, String> result = new HashMap<String, String>();
+			result.put("publicKey", publicKeyString);
+			result.put("privateKey", privateKeyString);
+			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 	}
 
