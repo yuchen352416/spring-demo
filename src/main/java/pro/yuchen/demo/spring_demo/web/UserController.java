@@ -1,5 +1,6 @@
 package pro.yuchen.demo.spring_demo.web;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 import pro.yuchen.demo.spring_demo.entity.User;
 
@@ -58,6 +59,7 @@ public class UserController {
 	 * @return 查询到的User
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@Cacheable("user-key") // 会默认添加缓存到Redis, 当缓存中存在想要查询的值时, 直接读取缓存中的数据, 而不调用方法
 	public User getUser(@PathVariable Long id) {
 		// url中的id可通过@PathVariable绑定到函数的参数中
 		User user = users.get(id);
