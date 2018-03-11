@@ -74,21 +74,38 @@
 			<version>2.4</version>
 		</dependency>
 
-
 		<dependency>
 		  <groupId>org.springframework.boot</groupId>
 		  <artifactId>spring-boot-starter-test</artifactId>
 		  <scope>test</scope>
 		</dependency>
 
+		<!-- 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
-		  <plugin>
-			 <groupId>org.springframework.boot</groupId>
-			 <artifactId>spring-boot-maven-plugin</artifactId>
-		  </plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<!-- 热部署插件 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!--fork :  如果没有该项配置devtools不会起作用，即应用不会restart -->
+					<fork>true</fork>
+					<addResources>true</addResources><!--支持静态文件热部署-->
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
