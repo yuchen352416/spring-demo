@@ -1,9 +1,7 @@
 package pro.yuchen.demo.spring_demo.pojo;
 
-
-
 /**
- * HTTP请求通用错误信息
+ * 页面错误信息
  */
 public class PageException extends Exception {
 
@@ -13,11 +11,11 @@ public class PageException extends Exception {
 	private Integer code;
 
 	/**
-	 * HTTP 错误信息
+	 * 错误信息
 	 */
 	private String message;
 	/**
-	 * HTTP 返回数据(JSON 格式)
+	 * 返回数据
 	 */
 	private String data;
 

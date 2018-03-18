@@ -1,15 +1,12 @@
 package pro.yuchen.demo.spring_demo;
 
-import pro.yuchen.demo.spring_demo.entity.Book;
 
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.UnsupportedEncodingException;
 
 public class Test {
 
 	@org.junit.Test
-	public void test() {
+	public void test() throws UnsupportedEncodingException {
 //		float f = 3.4f;
 //		System.out.println(f);
 //		short s1 = 1;
@@ -27,18 +24,35 @@ public class Test {
 //		String s2 = new StringBuilder("ja").append("va").toString();
 //		System.out.println(s2.intern() == s2);
 
-		String s1 = "Programming";
-		String s2 = new String("Programming");
-		String s3 = "Program";
-		String s4 = "ming";
-		String s5 = "Program" + "ming";
-		String s6 = s3 + s4;
-		System.out.println(s1 == s2);
-		System.out.println(s1 == s5);
-		System.out.println(s1 == s6);
-		System.out.println(s1 == s6.intern());
-		System.out.println(s2 == s2.intern());
+//		String s1 = "Programming";
+//		String s2 = new String("Programming");
+//		String s3 = "Program";
+//		String s4 = "ming";
+//		String s5 = "Program" + "ming";
+//		String s6 = s3 + s4;
+//		System.out.println(s1 == s2);
+//		System.out.println(s1 == s5);
+//		System.out.println(s1 == s6);
+//		System.out.println(s1 == s6.intern());
+//		System.out.println(s2 == s2.intern());
 
-		
+//		String str = "1.2";
+//		float f = Float.parseFloat(str);
+//		System.out.println(f);
+
+//		String s1 = "你好";
+//		String s2 = new String(s1.getBytes("GB2312"), "ISO-8859-1");
+//		System.out.println(s2);
+
+		try {
+			System.out.println("1");
+			return;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("2");
+		}
+
+
 	}
 }

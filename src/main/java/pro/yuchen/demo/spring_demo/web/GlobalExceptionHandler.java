@@ -12,10 +12,7 @@ import pro.yuchen.demo.spring_demo.pojo.PageException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 @ControllerAdvice
@@ -40,11 +37,12 @@ public class GlobalExceptionHandler {
 		ModelAndView m = new ModelAndView();
 		// 设置返回数据
 		Book book = new Book();
-		book.setName("Java 编程思想1");
-		List<Book> books = new ArrayList<Book>();
-		books.add(book);
+		book.setId(1);
+		book.setName("Java 编程思想");
+		book.setPress("Bruce").setPress("李述昱");
+		book.setDate(new Date());
 		m.addObject("book", book);
-		m.addObject("books", books);
+		m.addObject("url", "404.html");
 		// 设置返回页面
 		m.setViewName("error/500");
 		return m; // 返回thymeleaf渲染的页面

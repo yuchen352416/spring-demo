@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-	<title>HelloWorld</title>
+	<title>Thymeleaf Demo</title>
 </head>
 <body>
+
 	<h2>变量表达式</h2>
 	<span th:text="${book.name}"></span>
+
+	<h2>选择(星号)表达式</h2>
+	<div th:object="${book}">
+		ID: <span th:text="*{id}"></span><br/>
+		NAME: <span th:text="*{name}"></span><br/>
+		Date: <span th:text="*{#dates.format(date, 'yyyy-MM-dd HH:mm:ss.SSS')}"></span><br/>
+		Press:<br/>
+		<span th:each="p : *{press}">
+			<span th:text="${p}"></span><br/>
+		</span>
+	</div>
+
+	<h2>URL表达式</h2>
+	<a href="main.html" th:href="@{./404}">URL-TEST</a>
+	<a th:href="@{/hello}">hello</a>
+
+	<h2>常见的几种用法</h2>
+	<h4>1. 拼接字符串</h4>
+	<span th:text="|Welcome to our application, ${book.name}!|"></span>
+	<h4>2. 条件判断</h4>
+
 
 </body>
 </html>

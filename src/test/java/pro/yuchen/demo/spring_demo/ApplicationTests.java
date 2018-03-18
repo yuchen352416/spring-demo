@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockServletContext;
@@ -29,6 +30,9 @@ public class ApplicationTests {
 	@Autowired
 	private ConfigBean config;
 
+	@Value("${config.application}")
+	private String application;
+
 	@Before
 	public void setup() throws Exception {
 		mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
@@ -48,6 +52,7 @@ public class ApplicationTests {
 		System.out.println(config.getSex());
 		System.out.println(config.getKey());
 		System.out.println(config.getValue());
+		System.out.println(application);
 	}
 
 }
