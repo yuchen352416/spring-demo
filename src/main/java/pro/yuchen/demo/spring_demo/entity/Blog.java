@@ -1,14 +1,33 @@
 package pro.yuchen.demo.spring_demo.entity;
 
-public class Blog {
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.*;
+
+
+@Entity
+@Table(name="blog")
+public class Blog implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 
+	@Column
 	private String title;
 
+	@Column
 	private String content;
 
-	private User user;
+	@OneToMany(targetEntity=Comment.class,cascade=CascadeType.ALL)
+	@Fetch(FetchMode.JOIN)
+	//updatable=false很关键，如果没有它，在级联删除的时候就会报错(反转的问题)
+	@JoinColumn(name="blog_id",updatable=false)
+	private List<Comment> comments;
 
 	public Integer getId() {
 		return id;
@@ -34,11 +53,11 @@ public class Blog {
 		this.content = content;
 	}
 
-	public User getUser() {
-		return user;
+	public List<Comment> getComments() {
+		return comments;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 }
