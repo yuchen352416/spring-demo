@@ -13,7 +13,7 @@ import java.util.*;
 @RequestMapping(value = "/users")
 public class UserController {
 
-	static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
+	static Map<Integer, User> users = Collections.synchronizedMap(new HashMap<Integer, User>());
 
 	/**
 	 * 添加用户
@@ -33,7 +33,7 @@ public class UserController {
 	 * @return 成功的标志("success")
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public String deleteUser(@PathVariable Long id) {
+	public String deleteUser(@PathVariable Integer id) {
 		users.remove(id);
 		return "success";
 	}
@@ -45,7 +45,7 @@ public class UserController {
 	 * @return 成功的标志("success")
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public String putUser(@PathVariable Long id, @ModelAttribute User user) {
+	public String putUser(@PathVariable Integer id, @ModelAttribute User user) {
 		User u = users.get(id);
 		u.setName(user.getName());
 		u.setAge(user.getAge());
@@ -60,7 +60,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@Cacheable("user-key") // 会默认添加缓存到Redis, 当缓存中存在想要查询的值时, 直接读取缓存中的数据, 而不调用方法
-	public User getUser(@PathVariable Long id) {
+	public User getUser(@PathVariable Integer id) {
 		// url中的id可通过@PathVariable绑定到函数的参数中
 		User user = users.get(id);
 		return user;

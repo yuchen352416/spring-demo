@@ -38,11 +38,11 @@ public class RedisTest {
 		User user=new User();
 		user.setName("tom");
 		user.setAge(10);
-		user.setId(1L);
+		user.setId(1);
 		User user1 = new User();
 		user1.setName("Jack");
 		user1.setAge(48);
-		user1.setId(3L);
+		user1.setId(3);
 		Book book = new Book();
 		book.setDate(new Date());
 		book.setId(1);

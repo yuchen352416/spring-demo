@@ -2,15 +2,16 @@ package pro.yuchen.demo.spring_demo.entity;
 
 
 public class User {
-	private Long id;
+	private Integer id;
 	private String name;
 	private Integer age;
+	private String city;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -28,5 +29,13 @@ public class User {
 
 	public void setAge(Integer age) {
 		this.age = age;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 }
