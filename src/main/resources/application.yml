@@ -11,8 +11,6 @@ config:
     value: @config.value@
   application: 單車
 
-
-
 spring:
   # 模板配置
   thymeleaf:
@@ -31,6 +29,7 @@ spring:
   aop:
     auto: true
     proxy-target-class: false
+  # Redis
   redis:
     database: 0 # Redis数据库索引（默认为0）
     host: 127.0.0.1 # Redis服务器地址b
@@ -41,11 +40,19 @@ spring:
     pool.max-idle: 8 # 连接池中的最大空闲连接
     pool.min-idle: 0 # 连接池中的最小空闲连接
     timeout: 0 # 连接超时时间（毫秒）
-  datasource: # 数据库连接参数
+  # RabbitMQ
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+  # 数据库连接参数
+  datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/base_db?useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
+  # JPA-Hibernate
   jpa:
     database: MYSQL
     hibernate:
