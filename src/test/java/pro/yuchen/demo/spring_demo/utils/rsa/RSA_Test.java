@@ -1,9 +1,6 @@
-package pro.yuchen.demo.spring_demo.rsa;
+package pro.yuchen.demo.spring_demo.utils.rsa;
 
 import junit.framework.TestCase;
-import pro.yuchen.demo.spring_demo.utils.rsa.Base64;
-import pro.yuchen.demo.spring_demo.utils.rsa.RSAEncrypt;
-import pro.yuchen.demo.spring_demo.utils.rsa.RSASignature;
 
 import java.util.Map;
 

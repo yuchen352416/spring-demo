@@ -10,8 +10,13 @@ config:
     key: @config.key@
     value: @config.value@
   application: 單車
+  mail:
+    fromMail:
+      addr: yuchen352416@126.com # 以谁来发送邮件
 
 spring:
+  application:
+    name: spring-boot-demo
   # 模板配置
   thymeleaf:
     # 这个开发配置为false，避免改了模板还要重启服务器
@@ -59,6 +64,12 @@ spring:
       ddl-auto: update
       dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+  # Mail
+  mail:
+    host: smtp.126.com # 邮箱服务器地址
+    username: yuchen352416@126.com # 用户名
+    password: 18733775865 # 密码
+    default-encoding: UTF-8
 
 # mybatis 配置文件路径
 mybatis:
