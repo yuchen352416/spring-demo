@@ -44,15 +44,21 @@ public class Test {
 //		String s2 = new String(s1.getBytes("GB2312"), "ISO-8859-1");
 //		System.out.println(s2);
 
-		try {
-			System.out.println("1");
-			return;
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			System.out.println("2");
-		}
+//		try {
+//			System.out.println("1");
+//			return;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			System.out.println("2");
+//		}
 
+		int i = 0;
+		int a = 1 + i++;
+		int b = ++i;
+		System.out.println(a);
+		System.out.println(b);
 
+		System.out.println(2 << 3);
 	}
 }
