@@ -10,7 +10,9 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-
+/**
+ * 图片处理程序
+ */
 public class ThumbnailatorTest {
 
 	@Test

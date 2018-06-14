@@ -17,12 +17,13 @@ import java.util.*;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-	private Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-	@ExceptionHandler(value = GlobalException.class)
+	private Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
 	@ResponseBody
+	@ExceptionHandler(value = GlobalException.class)
 	public Map<String, Object> defaultErrorHandler(HttpServletResponse response, HttpServletRequest request, GlobalException e) throws Exception {
-		logger.error("", e);
+		log.error("", e);
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("code", e.getCode());
 		result.put("message", e.getMessage());
@@ -33,7 +34,7 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(value = {PageException.class})
 	public ModelAndView pageErrorHandler(PageException e) throws Exception {
-		logger.error("", e);
+		log.error("", e);
 		ModelAndView m = new ModelAndView();
 		// 设置返回数据
 		Book book = new Book();

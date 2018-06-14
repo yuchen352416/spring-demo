@@ -75,3 +75,8 @@ spring:
 mybatis:
   config-locations: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
+
+logging:
+  level:
+    org.springframework.web: INFO
+    pro.yuchen.demo.*: INFO
