@@ -13,6 +13,12 @@ import javax.persistence.*;
 @Table(name="blog")
 public class Blog implements Serializable {
 
+	public Blog() {}
+
+	public Blog(String title) {
+		this.title = title;
+	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;

@@ -4,10 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -49,6 +46,18 @@ public class BlogRepositoryTest {
 	@Test
 	public void findOne() {
 		Blog result = repository.findOne(45);
+		System.out.println(result.getTitle());
+		for (Comment comment:result.getComments()) {
+			System.out.println(comment.getContent());
+		}
+	}
+
+	@Test
+	public void findOneByTitle() {
+		ExampleMatcher matcher = ExampleMatcher.matching();
+		Example<Blog> ex = Example.of(new Blog("TEST...."), matcher);
+
+		Blog result = repository.findOne(ex);
 		System.out.println(result.getTitle());
 		for (Comment comment:result.getComments()) {
 			System.out.println(comment.getContent());
