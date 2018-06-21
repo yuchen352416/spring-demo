@@ -69,12 +69,6 @@ public class DES {
 	 * @param strings
 	 *            不传此参数按默认生成密钥 参数数组，[0]=加密主体名称，[1]=key的密码
 	 * @return 返回base64转码后的字符串
-	 * @throws InvalidKeyException
-	 * @throws NoSuchAlgorithmException
-	 * @throws NoSuchPaddingException
-	 * @throws UnsupportedEncodingException
-	 * @throws IllegalBlockSizeException
-	 * @throws BadPaddingException
 	 */
 	public static String encrypt(String encryptString, String... strings) {
 		try {
@@ -93,16 +87,10 @@ public class DES {
 	/**
 	 * DES解密字符串
 	 *
-	 * @param decryptString要解密的字符串
-	 * @param strings生成密鑰的參數
+	 * @param decryptString 要解密的字符串
+	 * @param strings 生成密鑰的參數
 	 *            不传此参数按默认生成密钥 参数数组，[0]=加密主体名称，[1]=key的密码
 	 * @return
-	 * @throws NoSuchAlgorithmException
-	 * @throws NoSuchPaddingException
-	 * @throws UnsupportedEncodingException
-	 * @throws InvalidKeyException
-	 * @throws IllegalBlockSizeException
-	 * @throws BadPaddingException
 	 */
 	public static String decrypt(String decryptString, String... strings) {
 		try {
