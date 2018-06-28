@@ -2,6 +2,7 @@ package pro.yuchen.demo.spring_demo;
 
 
 import java.io.UnsupportedEncodingException;
+import java.util.Date;
 
 public class Test {
 
@@ -53,12 +54,16 @@ public class Test {
 //			System.out.println("2");
 //		}
 
-		int i = 0;
-		int a = 1 + i++;
-		int b = ++i;
-		System.out.println(a);
-		System.out.println(b);
+//		int i = 0;
+//		int a = 1 + i++;
+//		int b = ++i;
+//		System.out.println(a);
+//		System.out.println(b);
+//
+//		System.out.println(2 << 3);
 
-		System.out.println(2 << 3);
+//		System.out.println("12".split(",").length);
+
+		System.out.println(new Date().getTime());
 	}
 }

@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
 	@ResponseBody
 	@ExceptionHandler(value = GlobalException.class)
 	public Map<String, Object> defaultErrorHandler(HttpServletResponse response, HttpServletRequest request, GlobalException e) throws Exception {
-		log.error("", e);
+		log.error("测试异常处理通用拦截器...", e);
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("code", e.getCode());
 		result.put("message", e.getMessage());
@@ -34,7 +34,8 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(value = {PageException.class})
 	public ModelAndView pageErrorHandler(PageException e) throws Exception {
-		log.error("", e);
+		log.error("测试异常处理页面拦截器...", e);
+		log.error("错误处理中...");
 		ModelAndView m = new ModelAndView();
 		// 设置返回数据
 		Book book = new Book();
