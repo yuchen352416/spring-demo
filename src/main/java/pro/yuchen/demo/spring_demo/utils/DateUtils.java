@@ -15,13 +15,13 @@ import java.util.GregorianCalendar;
  * @date 2016年11月13日 上午00:46:57
  *
  */
-public class DateUtil {
+public class DateUtils {
 
 	public static final String DATE = "yyyy-MM-dd";
 
 	public static final String DATETIME = "yyyy-MM-dd HH:mm:ss.SSS";
 
-	private DateUtil() {}
+	private DateUtils() {}
 
 	public static int getYear(long date){
 		Date now = new Date(date);
@@ -53,7 +53,7 @@ public class DateUtil {
 	 * @return 格式化后的字符串
 	 */
 	public static String dateToString(Date date) {
-		return DateUtil.dateToString(date, DATETIME);
+		return DateUtils.dateToString(date, DATETIME);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class DateUtil {
 	 * @throws ParseException
 	 */
 	public static Date stringToDate(String date) throws ParseException {
-		return DateUtil.stringToDate(date, DATETIME);
+		return DateUtils.stringToDate(date, DATETIME);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class DateUtil {
 	 * @throws ParseException 转换异常
 	 */
 	public static Long stringToTimestamp(String date) throws ParseException {
-		return DateUtil.stringToTimestamp(date, DateUtil.DATETIME);
+		return DateUtils.stringToTimestamp(date, DateUtils.DATETIME);
 	}
 
 	/**

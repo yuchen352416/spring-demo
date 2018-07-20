@@ -2,7 +2,6 @@ package pro.yuchen.demo.spring_demo;
 
 
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
 
 public class Test {
 
@@ -64,6 +63,37 @@ public class Test {
 
 //		System.out.println("12".split(",").length);
 
-		System.out.println(new Date().getTime());
+//		System.out.println(new Date().getTime());
+
+//		Map<String, Object> treeMap = new TreeMap<>();
+//		Map<String, Object> hashMap = new HashMap<>();
+//
+//		for (int i = 0; i < 100; i++) {
+//			treeMap.put("" + i, i);
+//		}
+//
+//		for (Object o : treeMap.values()) {
+//			System.out.println(o);
+//		}
+//
+//		System.out.println();
+//		System.out.println();
+//		System.out.println();
+//		System.out.println();
+//
+//
+//		for (Object o : hashMap.values()) {
+//			System.out.println(o);
+//		}
+//		System.out.println(((7 & 4) == 4) && ((7 & 2) == 2));
+
+//
+//		System.out.println(7 & -1);
+
+		String s = String.format("%6d",1234567).replace(" ", "0");//其中0表示补零而不是补空格，6表示至少6位
+		System.out.println(s);
+
+
+
 	}
 }

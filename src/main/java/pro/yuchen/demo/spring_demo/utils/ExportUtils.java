@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
 
-public class ExportUtil {
+public class ExportUtils {
 
-	private final static Logger log = LoggerFactory.getLogger(ExportUtil.class);
+	private final static Logger log = LoggerFactory.getLogger(ExportUtils.class);
 
-	private ExportUtil() {}
+	private ExportUtils() {}
 
 	/**
 	 * 为文件提供下载方法
