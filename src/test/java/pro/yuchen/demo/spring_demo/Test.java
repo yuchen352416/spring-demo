@@ -1,12 +1,17 @@
 package pro.yuchen.demo.spring_demo;
 
 
+import pro.yuchen.demo.spring_demo.utils.DateUtils;
+
 import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.util.Date;
+import java.util.regex.Pattern;
 
 public class Test {
 
 	@org.junit.Test
-	public void test() throws UnsupportedEncodingException {
+	public void test() throws UnsupportedEncodingException, ParseException {
 //		float f = 3.4f;
 //		System.out.println(f);
 //		short s1 = 1;
@@ -90,10 +95,35 @@ public class Test {
 //
 //		System.out.println(7 & -1);
 
-		String s = String.format("%6d",1234567).replace(" ", "0");//其中0表示补零而不是补空格，6表示至少6位
-		System.out.println(s);
+//		String s = String.format("%6d",1234567).replace(" ", "0");//其中0表示补零而不是补空格，6表示至少6位
+//		System.out.println(s);
 
 
+//		String month = "2018-08";
+//		Date date = DateUtils.stringToDate(month, "yyyy-MM");
+//		long l = DateUtils.getAddMonth(date.getTime(), 1);
+//		Date e = new Date(l);
+//		String end = DateUtils.dateToString(e, "yyyy-MM");
+//		System.out.println(end);
 
+//		String[] heads = new String[] {"日期", "订单号", "客户ID", "编号", "国家", "签证类型", "客人姓名", "数量", "支出合计", "收入合计", "利润", "操作", "备注"};
+//
+//		StringBuffer fileContent = new StringBuffer();
+//		// 写入表头
+//		for(int i = 0; i < heads.length; i++) {
+//			fileContent.append(heads[i]);
+//			if (i < heads.length - 1) {
+//				fileContent.append(",");
+//			} else {
+//				fileContent.append("\n");
+//			}
+//		}
+//
+//		System.out.println(fileContent.toString());
+
+
+		String foo = "204633853285612014";
+		boolean b = Pattern.matches("\\d{8,}", foo);
+		System.out.println(b);
 	}
 }
