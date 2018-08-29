@@ -27,6 +27,8 @@ public class RedisTest {
 	@Autowired
 	private RedisTemplate redisTemplate;
 
+//	Redis Data Type: 1.String, 2.Hash 3.List, 4.Set, 5.zSet
+
 	@Test
 	public void test() throws Exception {
 		stringRedisTemplate.opsForValue().set("aaa", "张三");
