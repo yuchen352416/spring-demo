@@ -435,7 +435,7 @@ public final class Protos {
         if (ref instanceof String) {
           return (String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -451,7 +451,7 @@ public final class Protos {
           getNumberBytes() {
         Object ref = number_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
           number_ = b;
@@ -706,7 +706,7 @@ public final class Protos {
 
         public final boolean isInitialized() {
           if (!hasNumber()) {
-            
+
             return false;
           }
           return true;
@@ -760,7 +760,7 @@ public final class Protos {
             getNumberBytes() {
           Object ref = number_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (String) ref);
             number_ = b;
@@ -870,7 +870,7 @@ public final class Protos {
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -886,7 +886,7 @@ public final class Protos {
         getNameBytes() {
       Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
         name_ = b;
@@ -929,7 +929,7 @@ public final class Protos {
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -945,7 +945,7 @@ public final class Protos {
         getEmailBytes() {
       Object ref = email_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
         email_ = b;
@@ -1285,7 +1285,7 @@ public final class Protos {
               phonesBuilder_ = null;
               phones_ = other.phones_;
               bitField0_ = (bitField0_ & ~0x00000008);
-              phonesBuilder_ = 
+              phonesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getPhonesFieldBuilder() : null;
             } else {
@@ -1299,16 +1299,16 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasName()) {
-          
+
           return false;
         }
         if (!hasId()) {
-          
+
           return false;
         }
         for (int i = 0; i < getPhonesCount(); i++) {
           if (!getPhones(i).isInitialized()) {
-            
+
             return false;
           }
         }
@@ -1363,7 +1363,7 @@ public final class Protos {
           getNameBytes() {
         Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
           name_ = b;
@@ -1470,7 +1470,7 @@ public final class Protos {
           getEmailBytes() {
         Object ref = email_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
           email_ = b;
