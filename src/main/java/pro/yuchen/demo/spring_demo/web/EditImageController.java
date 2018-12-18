@@ -20,10 +20,13 @@ import java.util.Map;
 public class EditImageController {
 
     @Autowired
+    ResourceLoader resource;
+
+    @Autowired
     UploadDirectoryUtils upload;
 
     @Autowired
-    ResourceLoader resource;
+    RequestImageUtils imageUtils;
 
 
     @RequestMapping(value = "/edit/upload/image", method = RequestMethod.POST)
@@ -31,7 +34,7 @@ public class EditImageController {
     public Map<String, Object> upload(HttpServletRequest request) throws Exception {
         Map<String, Object> map = new HashMap<>();
         Map<String, Object> data = new HashMap<>();
-        String src = RequestImageUtils.saveImagesByRequest(request).get(0);
+        String src = imageUtils.saveImagesByRequest(request).get(0);
         data.put("src", src);
         map.put("code", 0);
         map.put("msg", "添加成功");
@@ -39,7 +42,7 @@ public class EditImageController {
         return map;
     }
 
-    @RequestMapping(value = "/resource/image/{filename}", method = RequestMethod.GET)
+    @RequestMapping(value = "/resource/image/{filename:.+}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> resource(HttpServletRequest request, @PathVariable String filename) {
         try {

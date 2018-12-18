@@ -4,7 +4,8 @@ server:
 
 config:
   upload:
-    imagePath: /Users/Selfimpr/development/temp
+    path:
+      image: /Users/Selfimpr/development/temp
   user:
     name: Mr.Li
     age: 27

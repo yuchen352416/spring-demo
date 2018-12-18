@@ -10,16 +10,20 @@
 		<textarea id="demo"></textarea>
 		
 		<script type="text/javascript">
+			var index = null;
+			var layedit = null;
+
 			layui.use(["layer", "layedit"], function() {
-				var layedit = layui.layedit;
+				layedit = layui.layedit;
 				layedit.set({
 					uploadImage: {
 						url: '/edit/upload/image', //接口url
 						type: 'post', //默认post
 					}
 				});
-				layedit.build('demo'); //建立编辑器
+				index = layedit.build('demo'); //建立编辑器
 			});
+
 		</script>
 		
 	</body>

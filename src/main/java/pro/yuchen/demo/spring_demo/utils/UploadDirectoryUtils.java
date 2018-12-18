@@ -8,7 +8,7 @@ import java.io.File;
 @Configuration
 public class UploadDirectoryUtils {
 
-    @Value("${config.upload.imagePath}")
+    @Value("${config.upload.path.image}")
     private String imagePath;
 
     public synchronized String getImagePath() {
@@ -19,5 +19,4 @@ public class UploadDirectoryUtils {
         }
         return path;
     }
-
 }
