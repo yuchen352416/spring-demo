@@ -14,7 +14,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import pro.yuchen.demo.spring_demo.pojo.ConfigBean;
+import pro.yuchen.demo.spring_demo.config.ConfigBean;
 import pro.yuchen.demo.spring_demo.web.HelloController;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;

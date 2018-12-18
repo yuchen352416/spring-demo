@@ -3,6 +3,8 @@ server:
   port: 8081
 
 config:
+  upload:
+    imagePath: /Users/Selfimpr/development/temp
   user:
     name: Mr.Li
     age: 27
@@ -30,6 +32,10 @@ spring:
     suffix: .html
     excluded-view-names:
     template-resolver-order:
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:templates/static/
   # AOP切片
   aop:
     auto: true

@@ -4,8 +4,8 @@ package pro.yuchen.demo.spring_demo.mq.topic;
 		import org.springframework.amqp.rabbit.annotation.RabbitListener;
 		import org.springframework.stereotype.Component;
 
-@Component
-@RabbitListener(queues = "mysql")
+//@Component
+//@RabbitListener(queues = "mysql")
 public class TopicReceiverQueuesMySQL {
 
 	@RabbitHandler

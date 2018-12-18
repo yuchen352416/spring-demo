@@ -1,6 +1,6 @@
 package pro.yuchen.demo.spring_demo.thymeleaf;
 
-		import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Controller;
 		import org.springframework.ui.ModelMap;
 		import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,6 +13,12 @@ public class ThymeleafController {
 		map.put("hello","helloweb");
 		// return模板文件的名称，对应src/main/resources/templates/index.html
 		return "index";
+	}
+
+	@RequestMapping(value = {"/edit", "edit", "/edit.html"})
+	public String edit(ModelMap map) {
+		// return模板文件的名称，对应src/main/resources/templates/index.html
+		return "edit";
 	}
 
 }

@@ -40,6 +40,12 @@ public class Base64Utils {
 		}
 	}
 
+	/**
+	 * 根据 Base64 生成文件
+	 * @param base64 
+	 * @param path 文件路径
+	 * @return 
+	 */
 	public static boolean generateFile(String base64, String path) {
 		if (StringUtils.isEmpty(base64) || StringUtils.isEmpty(path)) {
 			return false;

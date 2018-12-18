@@ -21,6 +21,8 @@ public class DateUtils {
 
 	public static final String DATETIME = "yyyy-MM-dd HH:mm:ss.SSS";
 
+	public static final String TIMESTAMP = "yyyyMMddHHmmssSSS";
+
 	private DateUtils() {}
 
 	public static int getYear(long date){

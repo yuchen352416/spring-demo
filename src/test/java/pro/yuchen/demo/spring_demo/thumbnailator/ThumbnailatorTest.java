@@ -40,33 +40,17 @@ public class ThumbnailatorTest {
 
 		// A4纸
 		ImageUtils
-				.size(1240, 1754)
+				.size(1436, 2700)
 				.outputFormat("png")
-				.toFile("/Users/smile/Desktop/Temp/test/a4.png");
-
-		// 字条
-		ImageUtils
-				.size(530, 27)
-				.text("测试图片文字翩翩体...")
-				.font("楷体", 1, 18)
-				.outputFormat("png")
-				.toFile("/Users/smile/Desktop/Temp/test/text.png");
+				.toFile("/Users/Selfimpr/Desktop/white_border.png");
 
 		// 合成带纸条的护照首页
-		Thumbnails.of("/Users/smile/Desktop/Temp/test/home.jpg")
-				.size(530,380)
-				.watermark(Positions.BOTTOM_CENTER, ImageIO.read(new File("/Users/smile/Desktop/Temp/test/text.png")),1.0f)
+		Thumbnails.of("/Users/Selfimpr/Desktop/white_border.png")
+				.size(1436,2700)
+				.watermark(Positions.BOTTOM_CENTER, ImageIO.read(new File("/Users/Selfimpr/Desktop/tempImage.jpg")),1.0f)
 				.outputQuality(1.0f)
 				.outputFormat("png")
-				.toFile("/Users/smile/Desktop/Temp/test/test_02.png");
-
-		// 加到A4纸上
-		Thumbnails.of("/Users/smile/Desktop/Temp/test/a4.png")
-				.size(2105, 1487)
-				.watermark(SelfPositions.TOP_LEFT, ImageIO.read(new File("/Users/smile/Desktop/Temp/test/test_02.png")),1.0f)
-				.outputQuality(1.0f)
-				.outputFormat("png")
-				.toFile("/Users/smile/Desktop/Temp/test/test_03.png");
+				.toFile("/Users/Selfimpr/Desktop/temp.png");
 	}
 
 }

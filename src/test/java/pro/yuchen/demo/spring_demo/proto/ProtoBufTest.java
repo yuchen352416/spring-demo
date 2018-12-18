@@ -40,8 +40,6 @@ public class ProtoBufTest {
 		byte[] bytes = person.toByteArray(); // 序列化
 		Person result = Person.parseFrom(bytes); // 反序列化
 
-
-
 		// 遍历输出
 		for (Iterator<Map.Entry<FieldDescriptor, Object>> iter = result.getAllFields().entrySet().iterator(); iter.hasNext();) {
 			Map.Entry<FieldDescriptor, Object> field = iter.next();
@@ -53,8 +51,6 @@ public class ProtoBufTest {
 			printFieldValue(field);
 			System.out.println("-------------------------------------------");
 			System.out.println();
-
-
 		}
 	}
 

@@ -1,4 +1,4 @@
-package pro.yuchen.demo.spring_demo.pojo;
+package pro.yuchen.demo.spring_demo.config;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
